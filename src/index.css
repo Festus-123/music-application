@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* global styles */
+html{
+    box-sizing: border-box;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffc0cb6d;
+}
+/* container styles  */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.search-input{
+    color: black;
+    width: 50%;
+    padding: 20;
+    /* border-color: #560745; */
+    border: 2px solid pink;
+    margin: 20;
+    font-size: 1.2em;
+    outline: none;
+}
+.loading-state{
+    place-self: 100vh;
+}
+.song-card{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.song-title{
+
+}
+.song-genre{
+
+}
+.song-description{
+
+}
+.song-mood{
+
+}
+.audio-file{
+    
+}
