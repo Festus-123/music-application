@@ -29,6 +29,7 @@ export default function App() {
         
         console.log(response)
         const json = await response.json()
+        setLoading(!loading)
         setTracks(json.data)
 
       } catch (error) {
@@ -43,19 +44,36 @@ export default function App() {
 
   return (
     <div className="container">
+
+      <div className="search-form">
       <input type="text" 
       value={search}
       onChange={e => setSearch(e.target.value)}
       className="search-input" />
 
+      <button type="submit" className="search-btn">Search</button>
+      </div>
+
+    <div className="music-container">
+
       { loading ? (
         <h1 className="loading-state">Loading...</h1>
       ) : tracks.map((track) => (
-        <div key={track.id} className="music-card"> 
-          <h1 className="song-title">{track.title}</h1>
-          <h2 className="song-genre">{track.genre}</h2>
-          <p className="song-description">{track.description}</p>
-          <strong className="song-mood">{track.mood}</strong>
+        <div key={track.id} className="song-card"> 
+        { track.artwork && (
+          <img 
+            src={track.artwork["480x480"] || null} 
+            alt={`${track.title} cover`} 
+            className="song-cover-image"/>
+        )
+        }
+          {/* <h1 className="song-title">{track.title || "unKnown"}</h1> */}
+          <marquee behavior="" direction="horizontal" className='song-title'>
+            {track.title || 'unKnown'}
+          </marquee>
+          <h2 className="song-genre">{track.genre || "no genre"}</h2>
+          {/* <p className="song-description">{track.description}</p> */}
+          <strong className="song-mood">{track.mood || "general"}</strong>
 
           <audio 
           className="audio-file"
@@ -64,6 +82,8 @@ export default function App() {
         </div>
       ))
       }
+
+    </div>
     </div>
   );
 }
