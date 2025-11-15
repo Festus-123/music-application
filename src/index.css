@@ -16,9 +16,17 @@ body{
 /* container styles  */
 .container{
     display: flex;
-    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 100%;
+}
+.song-details-container{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    /* justify-content: space-evenly; */
+    width: 30%;
 }
 .search-form{
     display: flex;
@@ -103,4 +111,12 @@ body{
     width: 100%;
     position: sticky;
     bottom: 5px;
+}
+.show-lyrics-btn{
+
+    cursor: pointer;
+    text-align: right;
+    border-radius: 50px;
+    color: white;
+    
 }
