@@ -85,19 +85,22 @@ export default function App() {
               className="song-cover-image"/>
           )
           }
+          <div className="song-details-card"> 
             {/* <h1 className="song-title">{track.title || "unKnown"}</h1> */}
             <marquee behavior="" direction="horizontal" className='song-title'>
               {track.title || 'unKnown'}
             </marquee>
             <h2 className="song-artist">{track.artist?.name || "Unknown"}</h2>
             {/* <p className="song-description">{track.description}</p> */}
-            <strong className="song-genre">{track.genre || "general"}</strong>
+            {/* <strong className="song-genre">{track.genre || "general"}</strong> */}
 
+            <button className="show-lyrics-btn" onClick={() => fetchLyrics(track)}>lyrics</button>
             <audio 
             className="audio-file"
             controls src={track.preview} type='audio/mpeg'></audio>
 
-            <button className="show-lyrics-btn" onClick={() => fetchLyrics(track)}>lyrics</button>
+          </div>
+
           </div>
         ))
         }
@@ -105,7 +108,7 @@ export default function App() {
     </div>
     { lyrics && (
       <div className="lyrics-container">
-        <pre>{lyrics}</pre>
+        <pre className="lyrics">{lyrics}</pre>
       </div>
     )
     }

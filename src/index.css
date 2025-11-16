@@ -9,15 +9,13 @@ html{
 }
 body{
     background-color: #ffc0cb6d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
 }
 /* container styles  */
 .container{
     display: flex;
     /* align-items: center; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
 }
 .song-details-container{
@@ -25,8 +23,11 @@ body{
     /* flex-direction: column; */
     flex-wrap: wrap;
     align-items: center;
-    /* justify-content: space-evenly; */
-    width: 30%;
+    justify-content: center;
+    width: 70%;
+
+    position: relative;
+    /* border: 1px solid; */
 }
 .search-form{
     display: flex;
@@ -34,7 +35,9 @@ body{
     justify-content: center;
     position: relative;
 
-    width: 80%;
+    width: 90%;
+    position: sticky;
+    /* border: 1px solid ; */
 }
 .search-input{
     color: black;
@@ -59,10 +62,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    /* flex-direction: column; */
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 10px;
+    gap: 10px;
+    /* padding: 10px; */
     width: 100%;
+}
+
+.music-container::-webkit-scrollbar{
+
 }
 .loading-state{
     display: block;
@@ -70,26 +78,32 @@ body{
 }
 .song-card{
     width: 350px;
-    height: 450px;
+    height: 150px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+
     align-items: center;
-    justify-content: center;
+    /* justify-content: space-between; */
     box-shadow: 1px 1px 5px #00000050;
     margin: 10px;
-    /* background-color: pink; */
+
     background: linear-gradient(180deg, pink, #8000808f);
     padding: 0 5px;
     gap: 10px;
     border-radius: 50px;
     position: relative;
 }
+.song-details-card{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+    /* gap: 10px; */
+}
 .song-cover-image{
-    width: 100%;
-    height: 250px;
+    width: 40%;
+    height: 90%;
     border-radius: 50px;
-    margin-top: -25px;
+    /* margin-top: -25px; */
 }
 .song-title{
     font-weight: bolder;
@@ -99,16 +113,18 @@ body{
 }
 .song-genre{
     color: grey;
+    /* margin-top: 10px; */
 }
-.song-description{
-
+.song-artist{
+    /* margin-top: 20px; */
 }
 .song-mood{
     font-style: italic;
 }
 .audio-file{
     color: red;
-    width: 100%;
+    width: 90%;
+    height: 50px;
     position: sticky;
     bottom: 5px;
 }
@@ -119,4 +135,22 @@ body{
     border-radius: 50px;
     color: white;
     
+}
+
+/* lyrics container */
+.lyrics-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background-color: pink;
+    width: 30%;
+    max-height: 700px;
+    border-radius: 50px;
+    margin: 0;
+}
+.lyrics{
+    display: block;
+    font-size: 20px;
+    margin: 10px;
 }
